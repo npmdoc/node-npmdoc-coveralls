@@ -72,6 +72,24 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.coveralls.detectLocalGit">
+            function <span class="apidocSignatureSpan">coveralls.</span>detectLocalGit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.coveralls.fetchGitData">
+            function <span class="apidocSignatureSpan">coveralls.</span>fetchGitData
+            <span class="apidocSignatureSpan">(git, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.coveralls.getBaseOptions">
             function <span class="apidocSignatureSpan">coveralls.</span>getBaseOptions
             <span class="apidocSignatureSpan">(cb)</span>
@@ -123,6 +141,58 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.coveralls.convertLcovToCoveralls">module coveralls.convertLcovToCoveralls</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.coveralls.convertLcovToCoveralls.convertLcovToCoveralls">
+            function <span class="apidocSignatureSpan">coveralls.</span>convertLcovToCoveralls
+            <span class="apidocSignatureSpan">(input, options, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.coveralls.detectLocalGit">module coveralls.detectLocalGit</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.coveralls.detectLocalGit.detectLocalGit">
+            function <span class="apidocSignatureSpan">coveralls.</span>detectLocalGit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.coveralls.fetchGitData">module coveralls.fetchGitData</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.coveralls.fetchGitData.fetchGitData">
+            function <span class="apidocSignatureSpan">coveralls.</span>fetchGitData
+            <span class="apidocSignatureSpan">(git, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.coveralls.getBaseOptions">module coveralls.getBaseOptions</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.coveralls.getBaseOptions.getBaseOptions">
+            function <span class="apidocSignatureSpan">coveralls.</span>getBaseOptions
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
     <li class="apidocModuleLi"><a href="#apidoc.module.coveralls.getOptions">module coveralls.getOptions</a><ol>
 
         <li>
@@ -134,11 +204,41 @@
 
         </li>
 
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.coveralls.handleInput">module coveralls.handleInput</a><ol>
+
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.coveralls.getOptions.getBaseOptions">
-            function <span class="apidocSignatureSpan">coveralls.getOptions.</span>getBaseOptions
-            <span class="apidocSignatureSpan">(cb)</span>
+            <a class="apidocElementLiA" href="#apidoc.element.coveralls.handleInput.handleInput">
+            function <span class="apidocSignatureSpan">coveralls.</span>handleInput
+            <span class="apidocSignatureSpan">(input, cb, userOptions)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.coveralls.logger">module coveralls.logger</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.coveralls.logger.logger">
+            function <span class="apidocSignatureSpan">coveralls.</span>logger
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.coveralls.sendToCoveralls">module coveralls.sendToCoveralls</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.coveralls.sendToCoveralls.sendToCoveralls">
+            function <span class="apidocSignatureSpan">coveralls.</span>sendToCoveralls
+            <span class="apidocSignatureSpan">(obj, cb)</span>
             </a>
 
         </li>
@@ -205,23 +305,101 @@
     return cb(null, postJson);
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-if (err){
-  logger.error(&#x22;error from getOptions&#x22;);
-  cb(err);
-  return;
-}
-logger.debug(options);
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
 
-index.<span class="apidocCodeKeywordSpan">convertLcovToCoveralls</span>(input, options, function(err, postData){
-  if (err){
-    logger.error(&#x22;error from convertLcovToCoveralls&#x22;);
-    cb(err);
-    return;
+
+
+    <h2>
+        <a href="#apidoc.element.coveralls.detectLocalGit" id="apidoc.element.coveralls.detectLocalGit">
+        function <span class="apidocSignatureSpan">coveralls.</span>detectLocalGit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function detectLocalGit() {
+  var dir = process.cwd(), gitDir;
+  while (path.resolve(&#x27;/&#x27;) !== dir) {
+    gitDir = path.join(dir, &#x27;.git&#x27;);
+    var existsSync = fs.existsSync || path.existsSync;
+    if (existsSync(path.join(gitDir, &#x27;HEAD&#x27;)))
+      break;
+
+    dir = path.dirname(dir);
   }
-  logger.info(&#x22;sending this to coveralls.io: &#x22;, JSON.stringify(postData));
-  index.sendToCoveralls(postData, function(err, response, body){
-...</pre></li>
+
+  if (path.resolve(&#x27;/&#x27;) === dir)
+    return;
+
+  var head = fs.readFileSync(path.join(dir, &#x27;.git&#x27;, &#x27;HEAD&#x27;), &#x27;utf-8&#x27;).trim();
+  var branch = (head.match(REGEX_BRANCH) || [])[1];
+  if (!branch)
+    return { git_commit: head };
+
+  var commit = _parseCommitHashFromRef(dir, branch);
+
+  return { git_commit: commit, git_branch: branch };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.coveralls.fetchGitData" id="apidoc.element.coveralls.fetchGitData">
+        function <span class="apidocSignatureSpan">coveralls.</span>fetchGitData
+        <span class="apidocSignatureSpan">(git, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fetchGitData(git, cb) {
+  if (!cb){
+    throw new Error(&#x22;fetchGitData requires a callback&#x22;);
+  }
+
+  //-- Malformed/undefined git object
+  if (&#x27;undefined&#x27; === typeof git) {
+    return cb(new Error(&#x27;No options passed&#x27;));
+  }
+  if (!git.hasOwnProperty(&#x27;head&#x27;)) {
+    return cb(new Error(&#x27;You must provide the head&#x27;));
+  }
+  if (!git.head.hasOwnProperty(&#x27;id&#x27;)) {
+    return cb(new Error(&#x27;You must provide the head.id&#x27;));
+  }
+
+  //-- Set required properties of git if they weren&#x22;t provided
+  if (!git.hasOwnProperty(&#x22;branch&#x22;)) {
+    git.branch = &#x22;&#x22;;
+  }
+  if (!git.hasOwnProperty(&#x22;remotes&#x22;)) {
+    git.remotes = [];
+  }
+
+  //-- Assert the property types
+  if (&#x22;string&#x22; !== typeof git.branch) {
+    git.branch = &#x22;&#x22;;
+  }
+  if (!(git.remotes instanceof Array)) {
+    git.remotes = [];
+  }
+
+  //-- Use git?
+  exec(&#x22;git rev-parse --verify &#x22; + git.head.id, function(err, response){
+    if (err){
+      // git is not available...
+      git.head.author_name = git.head.author_name || &#x22;Unknown Author&#x22;;
+      git.head.author_email = git.head.author_email || &#x22;&#x22;;
+      git.head.committer_name = git.head.committer_name || &#x22;Unknown Committer&#x22;;
+      git.head.committer_email = git.head.committer_email || &#x22;&#x22;;
+      git.head.message = git.head.message || &#x22;Unknown Commit Message&#x22;;
+      return cb(null, git);
+    }
+
+    fetchHeadDetails(git, cb);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -384,23 +562,7 @@ index.<span class="apidocCodeKeywordSpan">convertLcovToCoveralls</span>(input, o
     cb(err, options);
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-var index = require(&#x27;../index&#x27;);
-var logger = require(&#x27;./logger&#x27;)();
-
-function handleInput(input, cb, userOptions) {
-  logger.debug(input);
-  logger.debug(&#x27;user options &#x27; + userOptions);
-	index.<span class="apidocCodeKeywordSpan">getOptions</span>(function(err, options){
-
-if (err){
-  logger.error(&#x22;error from getOptions&#x22;);
-  cb(err);
-  return;
-}
-logger.debug(options);
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -492,23 +654,7 @@ logger.debug(options);
     });
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-    index.convertLcovToCoveralls(input, options, function(err, postData){
-if (err){
-  logger.error(&#x22;error from convertLcovToCoveralls&#x22;);
-  cb(err);
-  return;
-}
-logger.info(&#x22;sending this to coveralls.io: &#x22;, JSON.stringify(postData));
-index.<span class="apidocCodeKeywordSpan">sendToCoveralls</span>(postData, function(err, response, body){
-  if (err){
-    cb(err);
-    return;
-  }
-  if (response.statusCode &#x3e;= 400){
-    cb(&#x22;Bad response: &#x22; + response.statusCode + &#x22; &#x22; + body);
-    return;
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -517,61 +663,180 @@ index.<span class="apidocCodeKeywordSpan">sendToCoveralls</span>(postData, funct
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.coveralls.getOptions" id="apidoc.module.coveralls.getOptions">module coveralls.getOptions</a></h1>
+<h1><a href="#apidoc.module.coveralls.convertLcovToCoveralls" id="apidoc.module.coveralls.convertLcovToCoveralls">module coveralls.convertLcovToCoveralls</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.coveralls.getOptions.getOptions" id="apidoc.element.coveralls.getOptions.getOptions">
-        function <span class="apidocSignatureSpan">coveralls.</span>getOptions
-        <span class="apidocSignatureSpan">(cb, _userOptions)</span>
+        <a href="#apidoc.element.coveralls.convertLcovToCoveralls.convertLcovToCoveralls" id="apidoc.element.coveralls.convertLcovToCoveralls.convertLcovToCoveralls">
+        function <span class="apidocSignatureSpan">coveralls.</span>convertLcovToCoveralls
+        <span class="apidocSignatureSpan">(input, options, cb)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">getOptions = function (cb, _userOptions){
-  if (!cb){
-    throw new Error(&#x27;getOptions requires a callback&#x27;);
-  }
-
-  var userOptions = _userOptions || {};
-
-  getBaseOptions(function(err, options){
-    // minimist populates options._ with non-option command line arguments
-    var firstNonOptionArgument = index.options._[0];
-
-    if (firstNonOptionArgument)
-      options.filepath = firstNonOptionArgument;
-
-    // lodash or else would be better, but no need for the extra dependency
-    for (var option in userOptions) {
-      options[option] = userOptions[option];
+    <li>description and source-code<pre class="apidocCodePre">convertLcovToCoveralls = function (input, options, cb){
+  var filepath = options.filepath || &#x27;&#x27;;
+  logger.debug(&#x22;in: &#x22;, filepath);
+  filepath = path.resolve(process.cwd(), filepath);
+  lcovParse(input, function(err, parsed){
+    if (err){
+      logger.error(&#x22;error from lcovParse: &#x22;, err);
+      logger.error(&#x22;input: &#x22;, input);
+      return cb(err);
     }
-    cb(err, options);
+    var postJson = {
+      source_files : []
+    };
+    if (options.git){
+      postJson.git = options.git;
+    }
+    if (options.run_at){
+      postJson.run_at = options.run_at;
+    }
+    if (options.service_name){
+      postJson.service_name = options.service_name;
+    }
+    if (options.service_job_id){
+      postJson.service_job_id = options.service_job_id;
+    }
+    if (options.service_pull_request) {
+      postJson.service_pull_request = options.service_pull_request;
+    }
+    if (options.repo_token) {
+      postJson.repo_token = options.repo_token;
+    }
+    if (options.parallel) {
+      postJson.parallel = options.parallel;
+    }
+    if (options.service_pull_request) {
+      postJson.service_pull_request = options.service_pull_request;
+    }
+    parsed.forEach(function(file){
+      file.file = cleanFilePath(file.file);
+      var currentFilePath = path.resolve(filepath, file.file);
+      if (fs.existsSync(currentFilePath)) {
+        postJson.source_files.push(convertLcovFileObject(file, filepath));
+      }
+    });
+    return cb(null, postJson);
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-var index = require(&#x27;../index&#x27;);
-var logger = require(&#x27;./logger&#x27;)();
-
-function handleInput(input, cb, userOptions) {
-  logger.debug(input);
-  logger.debug(&#x27;user options &#x27; + userOptions);
-	index.<span class="apidocCodeKeywordSpan">getOptions</span>(function(err, options){
-
-if (err){
-  logger.error(&#x22;error from getOptions&#x22;);
-  cb(err);
-  return;
-}
-logger.debug(options);
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.coveralls.detectLocalGit" id="apidoc.module.coveralls.detectLocalGit">module coveralls.detectLocalGit</a></h1>
+
 
     <h2>
-        <a href="#apidoc.element.coveralls.getOptions.getBaseOptions" id="apidoc.element.coveralls.getOptions.getBaseOptions">
-        function <span class="apidocSignatureSpan">coveralls.getOptions.</span>getBaseOptions
+        <a href="#apidoc.element.coveralls.detectLocalGit.detectLocalGit" id="apidoc.element.coveralls.detectLocalGit.detectLocalGit">
+        function <span class="apidocSignatureSpan">coveralls.</span>detectLocalGit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function detectLocalGit() {
+  var dir = process.cwd(), gitDir;
+  while (path.resolve(&#x27;/&#x27;) !== dir) {
+    gitDir = path.join(dir, &#x27;.git&#x27;);
+    var existsSync = fs.existsSync || path.existsSync;
+    if (existsSync(path.join(gitDir, &#x27;HEAD&#x27;)))
+      break;
+
+    dir = path.dirname(dir);
+  }
+
+  if (path.resolve(&#x27;/&#x27;) === dir)
+    return;
+
+  var head = fs.readFileSync(path.join(dir, &#x27;.git&#x27;, &#x27;HEAD&#x27;), &#x27;utf-8&#x27;).trim();
+  var branch = (head.match(REGEX_BRANCH) || [])[1];
+  if (!branch)
+    return { git_commit: head };
+
+  var commit = _parseCommitHashFromRef(dir, branch);
+
+  return { git_commit: commit, git_branch: branch };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.coveralls.fetchGitData" id="apidoc.module.coveralls.fetchGitData">module coveralls.fetchGitData</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.coveralls.fetchGitData.fetchGitData" id="apidoc.element.coveralls.fetchGitData.fetchGitData">
+        function <span class="apidocSignatureSpan">coveralls.</span>fetchGitData
+        <span class="apidocSignatureSpan">(git, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fetchGitData(git, cb) {
+  if (!cb){
+    throw new Error(&#x22;fetchGitData requires a callback&#x22;);
+  }
+
+  //-- Malformed/undefined git object
+  if (&#x27;undefined&#x27; === typeof git) {
+    return cb(new Error(&#x27;No options passed&#x27;));
+  }
+  if (!git.hasOwnProperty(&#x27;head&#x27;)) {
+    return cb(new Error(&#x27;You must provide the head&#x27;));
+  }
+  if (!git.head.hasOwnProperty(&#x27;id&#x27;)) {
+    return cb(new Error(&#x27;You must provide the head.id&#x27;));
+  }
+
+  //-- Set required properties of git if they weren&#x22;t provided
+  if (!git.hasOwnProperty(&#x22;branch&#x22;)) {
+    git.branch = &#x22;&#x22;;
+  }
+  if (!git.hasOwnProperty(&#x22;remotes&#x22;)) {
+    git.remotes = [];
+  }
+
+  //-- Assert the property types
+  if (&#x22;string&#x22; !== typeof git.branch) {
+    git.branch = &#x22;&#x22;;
+  }
+  if (!(git.remotes instanceof Array)) {
+    git.remotes = [];
+  }
+
+  //-- Use git?
+  exec(&#x22;git rev-parse --verify &#x22; + git.head.id, function(err, response){
+    if (err){
+      // git is not available...
+      git.head.author_name = git.head.author_name || &#x22;Unknown Author&#x22;;
+      git.head.author_email = git.head.author_email || &#x22;&#x22;;
+      git.head.committer_name = git.head.committer_name || &#x22;Unknown Committer&#x22;;
+      git.head.committer_email = git.head.committer_email || &#x22;&#x22;;
+      git.head.message = git.head.message || &#x22;Unknown Commit Message&#x22;;
+      return cb(null, git);
+    }
+
+    fetchHeadDetails(git, cb);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.coveralls.getBaseOptions" id="apidoc.module.coveralls.getBaseOptions">module coveralls.getBaseOptions</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.coveralls.getBaseOptions.getBaseOptions" id="apidoc.element.coveralls.getBaseOptions.getBaseOptions">
+        function <span class="apidocSignatureSpan">coveralls.</span>getBaseOptions
         <span class="apidocSignatureSpan">(cb)</span>
         </a>
     </h2>
@@ -694,6 +959,151 @@ logger.debug(options);
       if (fs.statSync(yml).isFile()) {
         var coveralls_yaml_conf = yaml.safeLoad(fs.readFileSync(yml, &#x27;utf8&#x27;));
         options. ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.coveralls.getOptions" id="apidoc.module.coveralls.getOptions">module coveralls.getOptions</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.coveralls.getOptions.getOptions" id="apidoc.element.coveralls.getOptions.getOptions">
+        function <span class="apidocSignatureSpan">coveralls.</span>getOptions
+        <span class="apidocSignatureSpan">(cb, _userOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getOptions = function (cb, _userOptions){
+  if (!cb){
+    throw new Error(&#x27;getOptions requires a callback&#x27;);
+  }
+
+  var userOptions = _userOptions || {};
+
+  getBaseOptions(function(err, options){
+    // minimist populates options._ with non-option command line arguments
+    var firstNonOptionArgument = index.options._[0];
+
+    if (firstNonOptionArgument)
+      options.filepath = firstNonOptionArgument;
+
+    // lodash or else would be better, but no need for the extra dependency
+    for (var option in userOptions) {
+      options[option] = userOptions[option];
+    }
+    cb(err, options);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.coveralls.handleInput" id="apidoc.module.coveralls.handleInput">module coveralls.handleInput</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.coveralls.handleInput.handleInput" id="apidoc.element.coveralls.handleInput.handleInput">
+        function <span class="apidocSignatureSpan">coveralls.</span>handleInput
+        <span class="apidocSignatureSpan">(input, cb, userOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function handleInput(input, cb, userOptions) {
+  logger.debug(input);
+  logger.debug(&#x27;user options &#x27; + userOptions);
+	index.getOptions(function(err, options){
+
+    if (err){
+      logger.error(&#x22;error from getOptions&#x22;);
+      cb(err);
+      return;
+    }
+    logger.debug(options);
+
+    index.convertLcovToCoveralls(input, options, function(err, postData){
+      if (err){
+        logger.error(&#x22;error from convertLcovToCoveralls&#x22;);
+        cb(err);
+        return;
+      }
+      logger.info(&#x22;sending this to coveralls.io: &#x22;, JSON.stringify(postData));
+      index.sendToCoveralls(postData, function(err, response, body){
+        if (err){
+          cb(err);
+          return;
+        }
+        if (response.statusCode &#x3e;= 400){
+          cb(&#x22;Bad response: &#x22; + response.statusCode + &#x22; &#x22; + body);
+          return;
+        }
+        logger.debug(response.statusCode);
+        logger.debug(body);
+        cb(null);
+      });
+    });
+  }, userOptions);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.coveralls.logger" id="apidoc.module.coveralls.logger">module coveralls.logger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.coveralls.logger.logger" id="apidoc.element.coveralls.logger.logger">
+        function <span class="apidocSignatureSpan">coveralls.</span>logger
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">logger = function (){
+  return require(&#x27;log-driver&#x27;)({level : getLogLevel()});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.coveralls.sendToCoveralls" id="apidoc.module.coveralls.sendToCoveralls">module coveralls.sendToCoveralls</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.coveralls.sendToCoveralls.sendToCoveralls" id="apidoc.element.coveralls.sendToCoveralls.sendToCoveralls">
+        function <span class="apidocSignatureSpan">coveralls.</span>sendToCoveralls
+        <span class="apidocSignatureSpan">(obj, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendToCoveralls = function (obj, cb){
+  var urlBase = &#x27;https://coveralls.io&#x27;;
+  if (process.env.COVERALLS_ENDPOINT) {
+    urlBase = process.env.COVERALLS_ENDPOINT;
+  }
+
+  var str = JSON.stringify(obj);
+  var url = urlBase + &#x27;/api/v1/jobs&#x27;;
+
+  if (index.options.stdout) {
+    process.stdout.write(str);
+    cb(null, { statusCode: 200 }, &#x27;&#x27;);
+  } else {
+    request.post({url : url, form : { json : str}}, function(err, response, body){
+      cb(err, response, body);
+    });
+  }
+}</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
