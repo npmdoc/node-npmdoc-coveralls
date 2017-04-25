@@ -1,4 +1,7 @@
-# api documentation for  [coveralls (v2.13.0)](https://github.com/nickmerwin/node-coveralls#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-coveralls.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-coveralls) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-coveralls.svg)](https://travis-ci.org/npmdoc/node-npmdoc-coveralls)
+# npmdoc-coveralls
+
+#### basic api documentation for  [coveralls (v2.13.0)](https://github.com/nickmerwin/node-coveralls#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-coveralls.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-coveralls) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-coveralls.svg)](https://travis-ci.org/npmdoc/node-npmdoc-coveralls)
+
 #### takes json-cov output into stdin and POSTs to coveralls.io
 
 [![NPM](https://nodei.co/npm/coveralls.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/coveralls)
