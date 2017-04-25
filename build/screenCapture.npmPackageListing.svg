@@ -1,29 +1,29 @@
 <svg height="414" width="720" xmlns="http://www.w3.org/2000/svg">
 <rect height="414" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">  0.  2017-04-17 16:45:31 +0000    74799 bytes  .</tspan>
-<tspan x="10" y="42">  1.  2017-04-17 16:45:31 +0000      533 bytes  Makefile</tspan>
-<tspan x="10" y="58">  2.  2017-04-17 16:45:31 +0000     7339 bytes  README.md</tspan>
-<tspan x="10" y="74">  3.  2017-04-17 16:45:31 +0000      388 bytes  bin/coveralls.js</tspan>
-<tspan x="10" y="90">  4.  2017-04-17 16:45:31 +0000     1720 bytes  fixtures/istanbul.lcov</tspan>
-<tspan x="10" y="106">  5.  2017-04-17 16:45:31 +0000     1881 bytes  fixtures/istanbul.remap.lcov</tspan>
-<tspan x="10" y="122">  6.  2017-04-17 16:45:31 +0000     4205 bytes  fixtures/lib/index.js</tspan>
-<tspan x="10" y="138">  7.  2017-04-17 16:45:31 +0000     1109 bytes  fixtures/onefile.lcov</tspan>
-<tspan x="10" y="154">  8.  2017-04-17 16:45:31 +0000      654 bytes  index.js</tspan>
-<tspan x="10" y="170">  9.  2017-04-17 16:45:31 +0000     3579 bytes  lib/convertLcovToCoveralls.js</tspan>
-<tspan x="10" y="186"> 10.  2017-04-17 16:45:31 +0000     1467 bytes  lib/detectLocalGit.js</tspan>
-<tspan x="10" y="202"> 11.  2017-04-17 16:45:31 +0000     2846 bytes  lib/fetchGitData.js</tspan>
-<tspan x="10" y="218"> 12.  2017-04-17 16:45:31 +0000     5869 bytes  lib/getOptions.js</tspan>
-<tspan x="10" y="234"> 13.  2017-04-17 16:45:31 +0000     1050 bytes  lib/handleInput.js</tspan>
-<tspan x="10" y="250"> 14.  2017-04-17 16:45:31 +0000      332 bytes  lib/logger.js</tspan>
-<tspan x="10" y="266"> 15.  2017-04-17 16:45:31 +0000      589 bytes  lib/sendToCoveralls.js</tspan>
-<tspan x="10" y="282"> 16.  2017-04-17 16:45:31 +0000     3739 bytes  package.json</tspan>
-<tspan x="10" y="298"> 17.  2017-04-17 16:45:31 +0000     6354 bytes  test/convertLcovToCoveralls.js</tspan>
-<tspan x="10" y="314"> 18.  2017-04-17 16:45:31 +0000     1977 bytes  test/detectLocalGit.js</tspan>
-<tspan x="10" y="330"> 19.  2017-04-17 16:45:31 +0000     4938 bytes  test/fetchGitData.js</tspan>
-<tspan x="10" y="346"> 20.  2017-04-17 16:45:31 +0000    18214 bytes  test/getOptions.js</tspan>
-<tspan x="10" y="362"> 21.  2017-04-17 16:45:31 +0000     2613 bytes  test/handleInput.js</tspan>
-<tspan x="10" y="378"> 22.  2017-04-17 16:45:31 +0000     1130 bytes  test/logger.js</tspan>
-<tspan x="10" y="394"> 23.  2017-04-17 16:45:31 +0000     2273 bytes  test/sendToCoveralls.js</tspan>
+<tspan x="10" y="26">  0.  2017-04-25 10:18:44 +0000    74799 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-25 10:18:44 +0000      533 bytes  Makefile</tspan>
+<tspan x="10" y="58">  2.  2017-04-25 10:18:44 +0000     7339 bytes  README.md</tspan>
+<tspan x="10" y="74">  3.  2017-04-25 10:18:44 +0000      388 bytes  bin/coveralls.js</tspan>
+<tspan x="10" y="90">  4.  2017-04-25 10:18:44 +0000     1720 bytes  fixtures/istanbul.lcov</tspan>
+<tspan x="10" y="106">  5.  2017-04-25 10:18:44 +0000     1881 bytes  fixtures/istanbul.remap.lcov</tspan>
+<tspan x="10" y="122">  6.  2017-04-25 10:18:44 +0000     4205 bytes  fixtures/lib/index.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-25 10:18:44 +0000     1109 bytes  fixtures/onefile.lcov</tspan>
+<tspan x="10" y="154">  8.  2017-04-25 10:18:44 +0000      654 bytes  index.js</tspan>
+<tspan x="10" y="170">  9.  2017-04-25 10:18:44 +0000     3579 bytes  lib/convertLcovToCoveralls.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-25 10:18:44 +0000     1467 bytes  lib/detectLocalGit.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-25 10:18:44 +0000     2846 bytes  lib/fetchGitData.js</tspan>
+<tspan x="10" y="218"> 12.  2017-04-25 10:18:44 +0000     5869 bytes  lib/getOptions.js</tspan>
+<tspan x="10" y="234"> 13.  2017-04-25 10:18:44 +0000     1050 bytes  lib/handleInput.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-25 10:18:44 +0000      332 bytes  lib/logger.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-25 10:18:44 +0000      589 bytes  lib/sendToCoveralls.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-25 10:18:44 +0000     3739 bytes  package.json</tspan>
+<tspan x="10" y="298"> 17.  2017-04-25 10:18:44 +0000     6354 bytes  test/convertLcovToCoveralls.js</tspan>
+<tspan x="10" y="314"> 18.  2017-04-25 10:18:44 +0000     1977 bytes  test/detectLocalGit.js</tspan>
+<tspan x="10" y="330"> 19.  2017-04-25 10:18:44 +0000     4938 bytes  test/fetchGitData.js</tspan>
+<tspan x="10" y="346"> 20.  2017-04-25 10:18:44 +0000    18214 bytes  test/getOptions.js</tspan>
+<tspan x="10" y="362"> 21.  2017-04-25 10:18:44 +0000     2613 bytes  test/handleInput.js</tspan>
+<tspan x="10" y="378"> 22.  2017-04-25 10:18:44 +0000     1130 bytes  test/logger.js</tspan>
+<tspan x="10" y="394"> 23.  2017-04-25 10:18:44 +0000     2273 bytes  test/sendToCoveralls.js</tspan>
 </text>
 </svg>
